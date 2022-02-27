@@ -29,7 +29,9 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="assets/css/form.css" rel="stylesheet">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- =======================================================
   * Template Name: NiceAdmin - v2.2.2
   * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
@@ -256,12 +258,12 @@
             <input id="email" class="input-text js-input" type="email" required>
             <label class="label" for="email">Medicine ID</label>
          </div> -->
-         <div class="form-field col-lg-6 ">
+         <!-- <div class="form-field col-lg-6 ">
             <input id="company" class="input-text js-input" type="text" required>
             <label class="label" for="company">Medicine Quantity</label>
-         </div>
+         </div> -->
           <div class="form-field col-lg-6 ">
-            <input id="phone" class="input-text js-input" type="text" required>
+            <input id="narcotics_level" class="input-text js-input" type="text" required>
             <label class="label" for="phone">Narcotics Level</label>
          </div>
          <center><div class="form-field col-lg-12">
@@ -270,280 +272,63 @@
            I agree
           </label>
          </div></center>
-         <center><div class="form-field col-lg-12">
-            <input class="submit-btn" type="submit" value="Submit">
-         </div></center>
+        
       </form>
+      <center><div class="form-field col-lg-12" >
+        <input class="submit-btn" type="submit" value="Submit" id="submit">
+     </div></center>
    </section>
-   
-  </div>
-    <!-- <section class="section">
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Personal Details</h5> -->
-
-              <!-- Multi Columns Form -->
-              <!-- <form class="row g-3">
-                <div class="col-md-12">
-                  <label for="inputName5" class="form-label">Your Name</label>
-                  <input type="text" class="form-control" id="inputName5" required>
-                </div>
-                <div class="col-md-12">
-                  <label for="inputEmail5" class="form-label">Your Email</label>
-                  <input type="email" class="form-control" id="inputEmail5" required>
-                </div>
-                <div class="col-md-12">
-                  <label for="inputphone" class="form-label">Your phone number</label>
-                  <input type="tel" id="inputphone" class="form-control" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
-              </div>
-                <div class="col-12">
-                  <label for="inputAddress5" class="form-label">Your Address</label>
-                  <input type="text" class="form-control" id="inputAddres5s" placeholder="1234 Main St" required>
-                </div>
-                <div class="col-md-12">
-                  <label for="inputdesignation" class="form-label">Your Designation In the company</label>
-                  <input type="text" class="form-control" id="inputdesignation" required>
-                </div>
-
-                <div class="col-12">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck">
-                    <label class="form-check-label" for="gridCheck">
-                     I agree
-                    </label>
+   <div class="container">
+    <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+            <div class="panel">
+                <div class="panel-heading">
+                  <div class="row">
+                        <div class="col col-sm-3 col-xs-12">
+                           <h4 class="title">Medicine <span>List</span></h4>
+                        </div>
+                    </div>
                   </div>
+                  <div class="panel-body table-responsive">
+                      <table class="table">
+                          <thead>
+                              <tr>
+                                  <th>S.NO.</th>
+                                  <th>Name</th>
+                                  <th>Label</th>
+                                  <th>Action</th>
+                              </tr>
+                          </thead>
+                          <tbody id="medicine-list">
+                              <tr>
+                                  <td>1</td>
+                                  <td>A</td>
+                                  <td>123</td>
+                                  <td>
+                                    <ul class="col" style="font-size: 24px;">
+                                      <i class="fa fa-edit"></i>
+                                      <i class="fa fa-trash"></i>
+                                  </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>B</td>
+                                <td>456</td>
+                                <td>
+                                  <ul class="col" style="font-size: 24px;">
+                                    <i class="fa fa-edit"></i>
+                                    <i class="fa fa-trash"></i>
+                                </ul>
+                              </td>
+                              </tr>
+                        </tbody>
+                    </table>
                 </div>
-                <div class="text-center">
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                  <button type="reset" class="btn btn-secondary">Reset</button>
-                </div>
-              </form>End Multi Columns Form
-
             </div>
-          </div>
-
-        </div> -->
-   <!-- <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Horizontal Form</h5>
-
-              Horizontal Form 
-              <form>
-                <div class="row mb-3">
-                  <label for="inputEmail3" class="col-sm-2 col-form-label">Your Name</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputText">
-                  </div>
-                </div>
-                <div class="row mb-3">
-                  <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-                  <div class="col-sm-10">
-                    <input type="email" class="form-control" id="inputEmail">
-                  </div>
-                </div>
-                <div class="row mb-3">
-                  <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-                  <div class="col-sm-10">
-                    <input type="password" class="form-control" id="inputPassword">
-                  </div>
-                </div>
-                <fieldset class="row mb-3">
-                  <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
-                  <div class="col-sm-10">
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                      <label class="form-check-label" for="gridRadios1">
-                        First radio
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                      <label class="form-check-label" for="gridRadios2">
-                        Second radio
-                      </label>
-                    </div>
-                    <div class="form-check disabled">
-                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
-                      <label class="form-check-label" for="gridRadios3">
-                        Third disabled radio
-                      </label>
-                    </div>
-                  </div>
-                </fieldset>
-                <div class="row mb-3">
-                  <div class="col-sm-10 offset-sm-2">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" id="gridCheck1">
-                      <label class="form-check-label" for="gridCheck1">
-                        Example checkbox
-                      </label>
-                    </div>
-                  </div>
-                </div>
-                <div class="text-center">
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                  <button type="reset" class="btn btn-secondary">Reset</button>
-                </div> 
-              </form>
-              End Horizontal Form -->
-<!-- 
-        <div class="col-lg-6">
-
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Company Details</h5> -->
-
-              <!-- Multi Columns Form -->
-              <!-- <form class="row g-3">
-                <div class="col-md-12">
-                  <label for="inputName5" class="form-label">Your Company Name</label>
-                  <input type="text" class="form-control" id="inputName5" required>
-                </div>
-                <div class="col-md-12">
-                  <label for="inputregistration5" class="form-label">Company Registration Id</label>
-                  <input type="text" class="form-control" id="inputregistration5" required>
-                </div>
-                <div class="col-md-12">
-                  <label for="inputEmail5" class="form-label">Company Email Id</label>
-                  <input type="email" class="form-control" id="inputEmail5" required>
-                </div>
-                <div class="col-md-12">
-                  <label for="inputphone5" class="form-label">Company Contact number</label>
-                  <input type="tel" id="inputphone5" class="form-control" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
-              </div>
-                <div class="col-12">
-                  <label for="inputAddress5" class="form-label">Company Address</label>
-                  <input type="text" class="form-control" id="inputAddres5s" placeholder="1234 Main St" required>
-                </div> -->
-                <!-- <div class="col-md-4">
-                  <label for="inputState" class="form-label">State</label>
-                  <select id="inputState" class="form-select">
-                    <option selected>Choose...</option>
-                    <option>...</option>
-                  </select>
-                </div> -->
-                <!-- <div class="col-12">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck">
-                    <label class="form-check-label" for="gridCheck" required>
-                     I agree
-                    </label>
-                  </div>
-                </div>
-                <div class="text-center">
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                  <button type="reset" class="btn btn-secondary">Reset</button>
-                </div>
-              </form> End Multi Columns Form 
-            </div>
-          </div> -->
-        <!--  <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">No Labels / Placeholders as labels Form</h5>
-
-              No Labels Form 
-              <form class="row g-3">
-                <div class="col-md-12">
-                  <input type="text" class="form-control" placeholder="Your Name">
-                </div>
-                <div class="col-md-6">
-                  <input type="email" class="form-control" placeholder="Email">
-                </div>
-                <div class="col-md-6">
-                  <input type="password" class="form-control" placeholder="Password">
-                </div>
-                <div class="col-12">
-                  <input type="text" class="form-control" placeholder="Address">
-                </div>
-                <div class="col-md-6">
-                  <input type="text" class="form-control" placeholder="City">
-                </div>
-                <div class="col-md-4">
-                  <select id="inputState" class="form-select">
-                    <option selected>Choose...</option>
-                    <option>...</option>
-                  </select>
-                </div>
-                <div class="col-md-2">
-                  <input type="text" class="form-control" placeholder="Zip">
-                </div>
-                <div class="text-center">
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                  <button type="reset" class="btn btn-secondary">Reset</button>
-                </div>
-              </form> End No Labels Form 
-
-            </div>
-          </div> -->
-
-         <!-- <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Floating labels Form</h5>
-
-              Floating Labels Form 
-              <form class="row g-3">
-                <div class="col-md-12">
-                  <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingName" placeholder="Your Name">
-                    <label for="floatingName">Your Name</label>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-floating">
-                    <input type="email" class="form-control" id="floatingEmail" placeholder="Your Email">
-                    <label for="floatingEmail">Your Email</label>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-floating">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                    <label for="floatingPassword">Password</label>
-                  </div>
-                </div>
-                <div class="col-12">
-                  <div class="form-floating">
-                    <textarea class="form-control" placeholder="Address" id="floatingTextarea" style="height: 100px;"></textarea>
-                    <label for="floatingTextarea">Address</label>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="col-md-12">
-                    <div class="form-floating">
-                      <input type="text" class="form-control" id="floatingCity" placeholder="City">
-                      <label for="floatingCity">City</label>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-floating mb-3">
-                    <select class="form-select" id="floatingSelect" aria-label="State">
-                      <option selected>New York</option>
-                      <option value="1">Oregon</option>
-                      <option value="2">DC</option>
-                    </select>
-                    <label for="floatingSelect">State</label>
-                  </div>
-                </div>
-                <div class="col-md-2">
-                  <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingZip" placeholder="Zip">
-                    <label for="floatingZip">Zip</label>
-                  </div>
-                </div>
-                <div class="text-center">
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                  <button type="reset" class="btn btn-secondary">Reset</button>
-                </div>
-              </form>End floating Labels Form 
-
-            </div>
-          </div>-->
-
         </div>
-      </div>
-    </section>
+    </div>
+</div>
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
@@ -570,7 +355,9 @@
   <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
   <script src="assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
-
+  <script src="../home/medicine.js"></script>
+  <script src="../home/getmedicine.js"></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>

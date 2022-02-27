@@ -29,8 +29,17 @@ btn.addEventListener('click', () => {
     let fetchRes = fetch(url = "https://sih2022.herokuapp.com/user/createuser", options);
     fetchRes.then(res => res.json())
         .then(d => {
-            alert("SignUp Completed")
-            location.replace('./login.html')
+            
             console.log(d)
+            
+            if(d.msg == "An account with same email is present")
+            {
+                alert("An account with same email is present");
+            }
+            else
+            {
+                alert("SignUp Completed")
+                location.replace('./login.html')
+            }
         })
 })
