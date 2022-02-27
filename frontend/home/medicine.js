@@ -7,7 +7,7 @@ btn.addEventListener('click', () => {
 
     console.log(c)
     user = {
-        "id" : localStorage.getItem("user"),
+        "id": localStorage.getItem("user"),
         "name": n,
         "level": c,
     }
@@ -25,8 +25,6 @@ btn.addEventListener('click', () => {
     let fetchRes = fetch(url = "https://sih2022.herokuapp.com/medicine/add", options);
     fetchRes.then(res => res.json())
         .then(d => {
-            
-            console.log(d)
-            alert(d.msg)
+            location.reload();
         })
 })
