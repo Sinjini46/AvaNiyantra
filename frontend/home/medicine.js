@@ -4,12 +4,14 @@ btn.addEventListener('click', () => {
 
     n = document.getElementById('name').value
     c = document.getElementById('narcotics_level').value
+    q = document.getElementById('quantity').value
 
     console.log(c)
     user = {
         "id": localStorage.getItem("user"),
         "name": n,
         "level": c,
+        "quantity": q
     }
 
     console.log(user)
