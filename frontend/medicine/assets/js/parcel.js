@@ -47,8 +47,9 @@ fetchRes
                             "med_id": e.target.id,
                             "name": document.getElementById(`name-${e.target.id}`).innerHTML,
                             "quantity": Number(document.getElementById(`quantity-${e.target.id}`).value),
-                            "active": false
+                            "active": true
                         }
+                        console.log(parcel)
                         let options = {
                             method: 'POST',
                             headers: {

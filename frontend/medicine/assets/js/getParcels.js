@@ -17,19 +17,21 @@ f
         a = document.getElementById("cart")
 
         for (i = 0; i < d.data.length; i++) {
-            tr = document.createElement("tr")
-            td_name = document.createElement("td")
-            td_quantity = document.createElement("td")
+            if (d.data[i].active == true) {
+                tr = document.createElement("tr")
+                td_name = document.createElement("td")
+                td_quantity = document.createElement("td")
 
-            n = document.createTextNode(d.data[i].name)
-            q = document.createTextNode(d.data[i].quantity)
+                n = document.createTextNode(d.data[i].name)
+                q = document.createTextNode(d.data[i].quantity)
 
-            td_name.appendChild(n)
-            td_quantity.appendChild(q)
+                td_name.appendChild(n)
+                td_quantity.appendChild(q)
 
-            tr.appendChild(td_name)
-            tr.appendChild(td_quantity)
-            a.appendChild(tr)
+                tr.appendChild(td_name)
+                tr.appendChild(td_quantity)
+                a.appendChild(tr)
+            }
         }
 
         console.log(d)
