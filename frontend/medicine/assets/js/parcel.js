@@ -34,6 +34,7 @@ fetchRes
 
                 edit = document.createElement('i')
                 edit.appendChild(document.createTextNode("+"))
+                edit.setAttribute("class", "btn btn-primary btn-circle btn-sm")
                 edit.setAttribute("id", d.data[i]['_id'])
 
 
@@ -45,7 +46,7 @@ fetchRes
                             "user_id": localStorage.getItem("user"),
                             "med_id": e.target.id,
                             "name": document.getElementById(`name-${e.target.id}`).innerHTML,
-                            "quantity": Number(document.getElementById(`quantity-${e.target.id}`).value),
+                            "quantity": Number(document.getElementById(`quantity-${e.target.id}`).innerHTML),
                             "active": true
                         }
                         console.log(parcel)
@@ -71,8 +72,43 @@ fetchRes
                 td3.appendChild(l)
                 tq.append(q)
 
-                a = document.createElement("input")
-                a.setAttribute("id", `quantity-${d.data[i]['_id']}`)
+                a = document.createElement("div")
+                a.setAttribute("class", "count_container")
+                inc_class = document.createElement("div")
+                inc_class.setAttribute("id", d.data[i]['_id'])
+                inc_class.setAttribute("class", "controller")
+                inc = document.createTextNode("+")
+                inc_class.appendChild(inc)
+                inc_class.addEventListener("click", (e) => {
+                    x = document.getElementById(`quantity-${e.target.id}`)
+                    no = Number(x.innerHTML)
+                    no += 1
+                    x.innerHTML = String(no)
+                })
+
+                count_class = document.createElement("div")
+                count_class.setAttribute("id", `quantity-${d.data[i]['_id']}`)
+                count = document.createTextNode("0")
+                count_class.appendChild(count)
+
+                dec_class = document.createElement("div")
+                dec_class.setAttribute("id", d.data[i]['_id'])
+                dec_class.setAttribute("class", "controller")
+                dec = document.createTextNode("-")
+                dec_class.appendChild(dec)
+                dec_class.addEventListener("click", (e) => {
+                    x = document.getElementById(`quantity-${e.target.id}`)
+                    no = Number(x.innerHTML)
+                    if (no != 0) {
+                        no -= 1
+                        x.innerHTML = String(no)
+                    }
+                })
+
+                a.appendChild(dec_class)
+                a.appendChild(count_class)
+                a.appendChild(inc_class)
+
                 value.appendChild(a)
 
                 td4.appendChild(edit)

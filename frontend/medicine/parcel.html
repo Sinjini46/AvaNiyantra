@@ -19,7 +19,29 @@
     <link rel="stylesheet" href="assets/css/aos.css">
 
     <link rel="stylesheet" href="assets/css/parcel.css">
-
+    <style>
+        .count_container {
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        .controller {
+            border: solid 0px;
+            height: 30px;
+            width: 30px;
+            border-radius: 100px;
+            background-color: rgb(102, 11, 247);
+            color: #fff;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .controller:hover {
+            border: solid 2px rgb(102, 11, 247);
+            background-color: white;
+            color: black;
+        }
+    </style>
 </head>
 
 <body>
@@ -47,12 +69,14 @@
                         </tr>
                     </table>
                 </div>
+                <input type="text" label="email of sender" id="email">
+                <input type="button" id="send" value="Send">
             </div>
         </div>
     </div>
     <script src="assets/js/parcel.js"></script>
     <script src="assets/js/getParcels.js"></script>
-
+    <script src="../home/sendParcel.js"></script>
     <script src="assets/js/jquery-3.3.1.min.js"></script>
     <script src="assets/js/jquery-ui.js"></script>
     <script src="assets/js/popper.min.js"></script>
@@ -63,35 +87,8 @@
 
     <script src="assets/js/mainparcel.js"></script>
 
-    <body>
-        <table id="container">
-            <tr>
-                <td>S.no</td>
-                <td>Name</td>
-                <td>Lvl</td>
-                <td>Max_quant</td>
-                <td>value</td>
-                <td>Action</td>
-            </tr>
-        </table>
-
-        <table id="cart">
-            <tr>
-                <td>Name</td>
-                <td>Quantity</td>
-            </tr>
-        </table>
-
-        <input type="text" label="email of sender" id="email">
-        <input type="button" id="send" value="Send">
-
-        <script src="../home/parcel.js"></script>
-        <script src="../home/getParcels.js"></script>
-        <script src="../home/sendParcel.js"></script>
-    </body>
-
 </html>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -258,4 +255,4 @@
 
 </body>
 
-</html>
+</html> -->
