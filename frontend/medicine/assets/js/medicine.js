@@ -1,7 +1,6 @@
 btn = document.getElementById('submit')
 
 btn.addEventListener('click', () => {
-
     n = document.getElementById('name').value
     c = document.getElementById('narcotics_level').value
     q = document.getElementById('quantity').value

@@ -5,8 +5,7 @@ btn.addEventListener("click", () => {
     console.log(email)
 
     const sender_id = localStorage.getItem("user")
-
-    //get email
+        //get email
     let options = {
         method: 'POST',
         headers: {
