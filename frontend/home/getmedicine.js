@@ -23,8 +23,6 @@ function med_delete(id) {
         })
 }
 
-
-
 user = {
     "id": localStorage.getItem("user")
 }

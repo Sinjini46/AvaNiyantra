@@ -1,7 +1,6 @@
 id = {
     "user_id": localStorage.getItem("user")
 }
-
 let opt = {
     method: 'POST',
     headers: {
