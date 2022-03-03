@@ -1,5 +1,4 @@
-let options = 
-{
+let options = {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json;charset=utf-8'
@@ -27,7 +26,10 @@ fetchRes
                 td0.appendChild(tn0)
 
                 anchor = document.createElement("a")
-                anchor.setAttribute("href", a);
+                anchor.addEventListener("click", (e) => {
+                    sessionStorage.setItem("parcel_id", a)
+                    window.location.href = "/frontend/pharmasist/pharmacistparcel.html"
+                })
                 anchor.appendChild(tn1)
                 td1 = document.createElement("td")
                 td1.appendChild(anchor)
