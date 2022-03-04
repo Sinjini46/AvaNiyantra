@@ -1074,3 +1074,14 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 13px;
   color: #012970;
 }
+#extra
+{
+  border: solid 0px;
+  height: 30px;
+  width: 30px;
+  border-radius: 100px;
+  background-color: rgb(102, 11, 247);
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
