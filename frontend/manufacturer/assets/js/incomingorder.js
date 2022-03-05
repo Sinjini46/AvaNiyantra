@@ -28,7 +28,7 @@ fetchRes
                 anchor = document.createElement("a")
                 anchor.addEventListener("click", (e) => {
                     sessionStorage.setItem("parcel_id", a)
-                    window.location.href = "/frontend/pharmasist/pharmacistparcel.html"
+                    window.location.href = "../pharmasist/pharmacistparcel.html"
                 })
                 anchor.appendChild(tn1)
                 td1 = document.createElement("td")
