@@ -1,3 +1,10 @@
+type = localStorage.getItem("type");
+if (type != "Manufacturer") {
+    document.getElementById("man").remove()
+}
+
+
+
 btn = document.getElementById('submit')
 
 btn.addEventListener('click', () => {
