@@ -21,34 +21,36 @@
 
 
     <link rel="stylesheet" href="assets/css/aos.css">
-
+    <link href="assets/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/parcel.css">
-    <style>
-        .count_container {
-            display: flex;
-            justify-content: space-around;
-        }
-        
-        .controller {
-            border: solid 0px;
-            height: 30px;
-            width: 30px;
-            border-radius: 100px;
-            background-color: rgb(102, 11, 247);
-            color: #fff;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        
-        .controller:hover {
-            border: solid 2px rgb(102, 11, 247);
-            background-color: white;
-            color: black;
-        }
-    </style>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
 </head>
 
 <body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+
+        <div class="d-flex align-items-center justify-content-between">
+            <a href="../manufacturer/manufacturer.html" class="d-flex align-items-center">
+                <img src="assets/img/logo.png" alt="" height="50" width="100">
+                <!-- <span class="d-none d-lg-block mx-4">AvaNiyantra</span> -->
+            </a>
+        </div>
+        <!-- End Logo -->
+    </header>
+    <!-- End Header -->
+    <div class="container">
+
+        <section class="get-in-touch">
+            <h1 class="title"><i class="fa fa-shopping-cart"></i> parcel</h1>
+        </section>
+    </div>
+
     <div class="site-wrap">
         <div class="site-section">
             <div class="container">
@@ -56,12 +58,12 @@
                     <table class="table table-bordered" id="container">
                         <thead>
                             <tr>
-                                <td>S.no</td>
-                                <td>Name</td>
-                                <td>Lvl</td>
-                                <td>Max_quant</td>
-                                <td>value</td>
-                                <td>Action</td>
+                                <td>Serial No</td>
+                                <td>Medicine Name</td>
+                                <td>Narcotics Level</td>
+                                <td>Maximum Quantity</td>
+                                <td>Quantity Required</td>
+                                <td>Add to Cart</td>
                             </tr>
                             <thead>
                     </table>
@@ -73,8 +75,11 @@
                         </tr>
                     </table>
                 </div>
+                <div class="text-center">
+                 <strong> Send the parcel to:</strong>
                 <input type="text" label="email of sender" id="email">
                 <input type="button" id="send" value="Send">
+            </div>
             </div>
         </div>
     </div>

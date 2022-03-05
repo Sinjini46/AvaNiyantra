@@ -10,7 +10,8 @@ let fetchRes = fetch(url = "http://sih2022.herokuapp.com/parcel/get_all_parcels"
 fetchRes
     .then(async res => res.json())
     .then(async d => {
-        if (d.msg == "done") {
+        if (d.msg == "done")
+         {
             container = document.getElementById("container")
             for (i = 0; i < d.data.length; i++) {
                 s = document.createTextNode(i + 1)
