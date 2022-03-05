@@ -63,6 +63,7 @@ btn.addEventListener("click", () => {
                                 gen_batch.then(res => res.json())
                                     .then(d => {
                                         console.log(d)
+                                        alert("Parcel Sent")
                                     })
                             })
 
