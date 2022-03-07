@@ -8,7 +8,7 @@ async function save_user(req, res) {
     const hash_password = await bcrypt.hash(req.body.password, 3)
     const json = {
         name: req.body.name,
-        catagory: req.body.catagory,
+        category: req.body.category,
         reg: req.body.registration,
         email: req.body.email,
         password: hash_password
@@ -46,11 +46,35 @@ router.post('/authenticate', async(req, res) => {
                 res.json({ msg: "email id is not registered" })
             } else {
                 if (await bcrypt.compare(req.body.password, result.password)) {
-                    res.json({ msg: "Login successful" })
+                    res.json({ msg: "Login successful", data: result })
                 } else {
                     res.json({ msg: "Password not match" })
                 }
             }
+        }
+    })
+})
+
+router.post('/get_user_by_id', async(req, res) => {
+    try {
+        user.findById(req.body._id, (err, docs) => {
+            if (err) {
+                res.json({ msg: err })
+            } else {
+                res.json({ data: docs })
+            }
+        })
+    } catch (e) {
+        res.json({ 'msg': e })
+    }
+})
+
+router.post('/getuser_by_email', async(req, res) => {
+    user.findOne({ email: req.body.email }, async(err, docs) => {
+        if (!docs) {
+            res.json({ msg: "No user" })
+        } else {
+            res.json({ msg: "done", data: docs })
         }
     })
 })
