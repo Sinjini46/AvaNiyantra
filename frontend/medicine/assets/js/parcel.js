@@ -39,7 +39,8 @@ fetchRes
 
 
                 edit.addEventListener("click", (e) => {
-                    if (Number(document.getElementById(`quantity-${e.target.id}`).value) > Number(document.getElementById(`max-${e.target.id}`).innerHTML)) {
+                    console.log(Number(document.getElementById(`quantity-${e.target.id}`).innerHTML))
+                    if (Number(document.getElementById(`quantity-${e.target.id}`).innerHTML) > Number(document.getElementById(`max-${e.target.id}`).innerHTML)) {
                         alert("Max Limit exceed")
                     } else {
                         parcel = {
