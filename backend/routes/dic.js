@@ -9,7 +9,7 @@ router.get('/', async(req, res) => {
             },
             {
                 link: '/user/createuser',
-                parameters: ['name', 'catagory', 'registration', 'email', 'password']
+                parameters: ['name', 'category', 'registration', 'email', 'password']
             }
         ]
     })

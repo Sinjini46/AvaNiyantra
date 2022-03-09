@@ -2,43 +2,171 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Parcel</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <!-- Favicons -->
+  <link href="assets/img/logo.png" rel="icon" style="height: 40rem; width: 40rem;">
+  <!-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
 
-    <style>
-        td {
-            padding: 2px 50px 0 0;
-        }
-    </style>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/jquery-ui.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+
+
+    <link rel="stylesheet" href="assets/css/aos.css">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/parcel.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
 </head>
 
 <body>
-    <table id="container">
-        <tr>
-            <td>S.no</td>
-            <td>Name</td>
-            <td>Lvl</td>
-            <td>Max_quant</td>
-            <td>value</td>
-            <td>Action</td>
-        </tr>
-    </table>
 
-    <table id="cart">
-        <tr>
-            <td>Name</td>
-            <td>Quantity</td>
-        </tr>
-    </table>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
 
-    <input type="text" label="email of sender" id="email">
-    <input type="button" id="send" value="Send">
+        <div class="d-flex align-items-center justify-content-between">
+            <a href="./parcel.html" class="d-flex align-items-center">
+                <img src="assets/img/logo.png" alt="" height="50" width="100">
+                <!-- <span class="d-none d-lg-block mx-4">AvaNiyantra</span> -->
+            </a>
+        </div>
+        <!-- End Logo -->
+    </header>
+    <!-- End Header -->
+    <div class="container">
 
-    <script src="../home/parcel.js"></script>
-    <script src="../home/getParcels.js"></script>
+        <section class="get-in-touch">
+            <h1 class="title"><i class="fa fa-shopping-cart"></i> parcel</h1>
+        </section>
+    </div>
+
+    <div class="site-wrap">
+        <div class="site-section">
+            <div class="container">
+                <div class="site-blocks-table">
+                    <table class="table table-bordered" id="container">
+                        <thead>
+                            <tr>
+                                <td>Serial No</td>
+                                <td>Medicine Name</td>
+                                <td>Narcotics Level</td>
+                                <td>Maximum Quantity</td>
+                                <td>Quantity Required</td>
+                                <td>Add to Cart</td>
+                            </tr>
+                            <thead>
+                    </table>
+
+                    <table class="table table-bordered" id="cart">
+                        <tr>
+                            <td>Name</td>
+                            <td>Quantity</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="text-center">
+                 <strong> Send the parcel to:</strong>
+                <input type="text" label="email of sender" id="email">
+                <input type="button" id="send" value="Send">
+            </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/parcel.js"></script>
+    <script src="assets/js/getParcels.js"></script>
     <script src="../home/sendParcel.js"></script>
-</body>
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/jquery-ui.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/aos.js"></script>
+
+    <script src="assets/js/mainparcel.js"></script>
 
 </html>
+<!--     <div class="row">
+                    <div class="col-md-6">
+                        <div class="row mb-5">
+                            <div class="col-md-6 mb-3 mb-md-0">
+                                <button class="btn btn-primary btn-sm btn-block">Update Cart</button>
+                            </div>
+                            <div class="col-md-6">
+                                <button class="btn btn-outline-primary btn-sm btn-block">Continue Shopping</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label class="text-black h4" for="coupon">Coupon</label>
+                                <p>Enter your coupon code if you have one.</p>
+                            </div>
+                            <div class="col-md-8 mb-3 mb-md-0">
+                                <input type="text" class="form-control py-3" id="coupon" placeholder="Coupon Code">
+                            </div>
+                            <div class="col-md-4">
+                                <button class="btn btn-primary btn-sm">Apply Coupon</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 pl-5">
+                        <div class="row justify-content-end">
+                            <div class="col-md-7">
+                                <div class="row">
+                                    <div class="col-md-12 text-right border-bottom mb-5">
+                                        <h3 class="text-black h4 text-uppercase">Cart Totals</h3>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <span class="text-black">Subtotal</span>
+                                    </div>
+                                    <div class="col-md-6 text-right">
+                                        <strong class="text-black">$230.00</strong>
+                                    </div>
+                                </div>
+                                <div class="row mb-5">
+                                    <div class="col-md-6">
+                                        <span class="text-black">Total</span>
+                                    </div>
+                                    <div class="col-md-6 text-right">
+                                        <strong class="text-black">$230.00</strong>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <button class="btn btn-primary btn-lg py-3 btn-block" onclick="window.location='checkout.html'">Proceed To Checkout</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <script src="assets/js/jquery-3.3.1.min.js"></script>
+            <script src="assets/js/jquery-ui.js"></script>
+            <script src="assets/js/popper.min.js"></script>
+            <script src="assets/js/bootstrap.min.js"></script>
+            <script src="assets/js/owl.carousel.min.js"></script>
+            <script src="assets/js/jquery.magnific-popup.min.js"></script>
+            <script src="assets/js/aos.js"></script>
+
+            <script src="assets/js/mainparcel.js"></script>
+
+</body>
+
+</html> -->
