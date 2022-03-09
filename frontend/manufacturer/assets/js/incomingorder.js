@@ -23,9 +23,11 @@ fetchRes
                 tn0 = document.createTextNode(i + 1)
                 tn2 = document.createTextNode(n)
                 if (d.data[i].createdAt != null) {
-                    date_time = d.data[i].createdAt.split('T')
-                    date = date_time[0]
-                    time = date_time[1].split('.')[0]
+                    date_time = new Date(String(d.data[i].createdAt))
+                    console.log(date_time)
+                    date = date_time.toDateString()
+                    time = date_time.toLocaleTimeString()
+                    console.log(date, time);
                     tn_date = document.createTextNode(`${date}\t${time}`)
                 } else {
                     tn_date = document.createTextNode('-')
