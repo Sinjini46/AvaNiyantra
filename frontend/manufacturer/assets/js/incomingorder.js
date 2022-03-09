@@ -11,6 +11,7 @@ fetchRes
     .then(async res => res.json())
     .then(async d => {
         arr = []
+        console.log(d)
         container = document.getElementById("container")
         for (i = 0; i < d.data.length; i++) {
             console.log(d)
@@ -21,6 +22,14 @@ fetchRes
                 tn1 = document.createTextNode(a)
                 tn0 = document.createTextNode(i + 1)
                 tn2 = document.createTextNode(n)
+                if (d.data[i].createdAt != null) {
+                    date_time = d.data[i].createdAt.split('T')
+                    date = date_time[0]
+                    time = date_time[1].split('.')[0]
+                    tn_date = document.createTextNode(`${date}\t${time}`)
+                } else {
+                    tn_date = document.createTextNode('-')
+                }
 
                 td0 = document.createElement("td")
                 td0.appendChild(tn0)
@@ -40,6 +49,10 @@ fetchRes
 
                 tr1 = document.createElement("tr")
 
+                td_date = document.createElement("td")
+                td_date.appendChild(tn_date)
+
+                tr1.appendChild(td_date)
                 tr1.appendChild(td0)
                 tr1.appendChild(td2)
                 tr1.appendChild(td1)
