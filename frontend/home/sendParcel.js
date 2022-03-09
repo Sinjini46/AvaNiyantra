@@ -64,6 +64,7 @@ btn.addEventListener("click", () => {
                                     .then(d => {
                                         console.log(d)
                                         alert("Parcel Sent")
+                                        location.reload()
                                     })
                             })
 
