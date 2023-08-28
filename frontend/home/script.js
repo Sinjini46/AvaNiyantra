@@ -26,7 +26,7 @@ btn.addEventListener('click', () => {
         body: JSON.stringify(user)
     }
 
-    let fetchRes = fetch(url = "https://sih2022.herokuapp.com/user/createuser", options);
+    let fetchRes = fetch(url = "http://127.0.0.1:8000/user/createuser", options);
     fetchRes.then(res => res.json())
         .then(d => {
             
