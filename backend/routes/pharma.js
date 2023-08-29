@@ -8,13 +8,13 @@ router.post('/add', async(req, res) => {
     //console.log(req.body.id)
     /* console.log(req.body.patientName)*/
     //console.log(req.body.medicines) 
-    user = req.body.id
+    /* user = req.body.id
     req_medicines = req.body.medicines
     console.log(req.body.patientName)
     console.log(req.body.patientContactNumber)
     console.log(req.body.doctorName)
     console.log(req.body.doctorRegNumber)
-    console.log(req.body.medicines)
+    console.log(req.body.medicines) */
     const json = {
         name: req.body.patientName,
         contact_number: req.body.patientContactNumber,

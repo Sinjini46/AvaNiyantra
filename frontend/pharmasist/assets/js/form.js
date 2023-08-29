@@ -39,7 +39,7 @@ function update_medicine(update_med){
             console.log("Update:",d.msg);
         })
 }
-function check_elements_present(required_data, user_data){
+function check_elements_present(required_data, user_data, user_id){
   var status  = 0
   required_data.forEach(itemA=> {
     var flag =0;
@@ -55,12 +55,11 @@ function check_elements_present(required_data, user_data){
         else{
           user_data[i].quantity = user_data[i].quantity-itemA.dose
           updated_data = {
-            "id": localStorage.getItem("user"),
-            "name": user_data[i].name,
-            "level": user_data[i].level,
+            "_id": user_data[i]._id,
             "quantity": user_data[i].quantity
           }
-          console.log(updated_data)
+          console.log(user_id)
+         // console.log(updated_data)
           update_medicine(updated_data)
         }
 
@@ -136,11 +135,13 @@ button.addEventListener('click', (e) => {
         //console.log(d)
         if(d.msg=="done"){
           console.log(d.data)
-          flag = check_elements_present(medicines, d.data)
+          console.log(user.id)
+          flag = check_elements_present(medicines, d.data, user.id)
           console.log("Flag:", flag)
           if(flag==1){
             add_details(requestData)
             alert("Orders Processed")
+            location.reload()
           }
         }
       })
