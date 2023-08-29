@@ -1,13 +1,10 @@
 const mongoose = require('mongoose');
 const pharma = new mongoose.Schema({
-    recp_id: {
-        type: String
-    },
     name: {
         type: String
     },
     contact_number: {
-        type: Number
+        type: String
     },
     doc_name: {
         type: String
