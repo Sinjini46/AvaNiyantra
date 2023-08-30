@@ -24,6 +24,19 @@ function createNewElement() {
 
   // Append the new input fields
   document.getElementById("newForm").appendChild(txtNewInputBox1);
+  console.log(counter);
+}
+
+function removeLastElement() {
+  if (counter > 0) {
+    // Decrement the counter
+    counter--;
+
+    // Remove the last added input fields
+    const newForm = document.getElementById("newForm");
+    newForm.removeChild(newForm.lastChild);
+    console.log(counter);
+  }
 }
 
 function update_medicine(update_med){
