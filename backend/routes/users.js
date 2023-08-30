@@ -61,7 +61,7 @@ router.post('/get_user_by_id', async(req, res) => {
             if (err) {
                 res.json({ msg: err })
             } else {
-                res.json({ data: docs })
+                res.json({msg:"done", data: docs })
             }
         })
     } catch (e) {

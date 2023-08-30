@@ -1,7 +1,7 @@
-function edit() {
+/* function edit() {
     console.log('edit')
 }
-
+ */
 function med_delete(id) {
     data = {
         "_id": id
@@ -55,8 +55,8 @@ fetchRes.then(res => res.json())
                 q = document.createTextNode(d.data[i]['quantity'])
 
                 edit = document.createElement('i')
-                edit.setAttribute("class", "fa fa-edit")
-                edit.setAttribute("style", "font-size: 24px; margin-right: 20px;")
+               /*  edit.setAttribute("class", "fa fa-edit") */
+               /*  edit.setAttribute("style", "font-size: 24px; margin-right: 20px;") */
                 edit.setAttribute("id", d.data[i]['_id'])
                 edit.addEventListener("click", (e) => {
                     console.log(e.target.id)

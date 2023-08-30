@@ -14,17 +14,18 @@ function createNewElement() {
         </div>
         <div class="col-lg-6">
           <label for="inputmedicinedosage${counter}" class="form-label">Medicine Dosage</label>
-          <input type="text" class="form-control" id="inputmedicinedosage${counter}" required>
+          <input type="number" class="form-control" id="inputmedicinedosage${counter}" required>
         </div>
       </div>
     </div>`;
-  
+
   // Increment the counter for the next set of elements
   counter++;
 
   // Append the new input fields
   document.getElementById("newForm").appendChild(txtNewInputBox1);
 }
+
 function update_medicine(update_med){
   let options = {
     method: 'POST',
@@ -43,7 +44,7 @@ function check_elements_present(required_data, user_data, user_id){
   var status  = 0
   required_data.forEach(itemA=> {
     var flag =0;
-  
+
     for (let i=0;i<user_data.length;i++){
       if(user_data[i].name.toLowerCase() === itemA.med_name.toLowerCase()){
         flag = 1;
@@ -75,7 +76,7 @@ function check_elements_present(required_data, user_data, user_id){
     return 0;
   }
   return 1;
-} 
+}
 function add_details(requestData){
   let options = {
     method: 'POST',
@@ -117,7 +118,7 @@ button.addEventListener('click', (e) => {
     doctorRegNumber,
     medicines
   };
-  
+
   let options1 = {
     method: 'POST',
     headers: {
@@ -125,7 +126,7 @@ button.addEventListener('click', (e) => {
     },
     body: JSON.stringify(user)
 }
-  
+
   console.log(requestData)
   console.log(counter)
   var flag = 0
@@ -145,11 +146,11 @@ button.addEventListener('click', (e) => {
           }
         }
       })
-  
-  
+
+
       //console.log(user_med)
- // flag = check_elements_present(medicines, user_med)    
-  //Validating the medicines 
+ // flag = check_elements_present(medicines, user_med)
+  //Validating the medicines
 })
 
 

@@ -781,11 +781,7 @@ a {
   cursor: pointer;
   transition: 0.3s;
 }
-.get-in-touch {
-  max-width:100rem;
-  margin-top:5rem;
-}
-.get-in-touch .title {
+.title {
   align-items: center;
   text-align: center;
   text-transform: uppercase;
