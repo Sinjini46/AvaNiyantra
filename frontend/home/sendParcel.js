@@ -17,7 +17,7 @@ btn.addEventListener("click", () => {
     gen_recv_id.then(res => res.json())
         .then(d => {
             if (d.msg == "No user") {
-                alert("No user found")
+                swal("No User Found", "The provided email does not correspond to a registered user.", "error");
             } else {
                 recv_id = d.data._id
 
@@ -63,25 +63,13 @@ btn.addEventListener("click", () => {
                                 gen_batch.then(res => res.json())
                                     .then(d => {
                                         console.log(d)
-                                        alert("Parcel Sent")
-                                        location.reload()
+                                        swal("Parcel Sent", "The parcel has been successfully sent.", "success").then(() => {
+                                            location.reload();
+                                        });
                                     })
                             })
 
-
-
-
-
-
-
-
-
-
-
-
-
                     })
-
 
             }
         })

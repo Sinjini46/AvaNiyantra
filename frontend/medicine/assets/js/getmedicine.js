@@ -18,7 +18,9 @@ function med_delete(id) {
     fetchRes.then(res => res.json())
         .then(d => {
             if (d.msg == "done") {
-                location.reload();
+                swal("Medicine Deleted", "The selected medicine has been deleted from the medicine list.", "success").then(() => {
+                    location.reload();
+            })
             }
         })
 }

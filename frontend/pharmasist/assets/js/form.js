@@ -62,7 +62,7 @@ function check_elements_present(required_data, user_data, user_id){
       if(user_data[i].name.toLowerCase() === itemA.med_name.toLowerCase()){
         flag = 1;
         if(user_data[i].quantity < itemA.dose){
-          alert(user_data[i].name+ " is not in sufficient amount");
+          swal("Insufficient Stock", `${user_data[i].name} is not in sufficient amount`, "error");
           status = 1;
           return 0;
         }
@@ -80,7 +80,7 @@ function check_elements_present(required_data, user_data, user_id){
       }
     }
     if(flag == 0){
-      alert(itemA.med_name + " is not there in our stock");
+      swal("Medicine Not Found", `${itemA.med_name} is not there in our stock`, "error");
       status = 1;
       return 0;
     }
@@ -154,8 +154,9 @@ button.addEventListener('click', (e) => {
           console.log("Flag:", flag)
           if(flag==1){
             add_details(requestData)
-            alert("Orders Processed")
-            location.reload()
+            swal("Success", "Orders processed successfully.", "success").then(() => {
+              location.reload();
+          })
           }
         }
       })
