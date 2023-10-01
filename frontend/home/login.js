@@ -15,7 +15,7 @@ button.addEventListener('click', () => {
         body: JSON.stringify(user)
     }
 
-    let fetchRes = fetch(url = "https://sih2022.herokuapp.com/user/authenticate", options);
+    let fetchRes = fetch(url = "http://127.0.0.1:8000/user/authenticate", options);
     fetchRes.then(res => res.json()).then(d => {
         console.log(d)
         alert(d.msg)

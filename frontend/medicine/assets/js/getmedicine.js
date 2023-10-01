@@ -14,7 +14,7 @@ function med_delete(id) {
         body: JSON.stringify(data)
     }
 
-    let fetchRes = fetch(url = "https://sih2022.herokuapp.com/medicine/delete", options);
+    let fetchRes = fetch(url = "http://127.0.0.1:8000/medicine/delete", options);
     fetchRes.then(res => res.json())
         .then(d => {
             if (d.msg == "done") {
@@ -35,7 +35,7 @@ let options = {
     body: JSON.stringify(user)
 }
 
-let fetchRes = fetch(url = "https://sih2022.herokuapp.com/medicine/", options);
+let fetchRes = fetch(url = "http://127.0.0.1:8000/medicine/", options);
 fetchRes.then(res => res.json())
     .then(d => {
         container = document.getElementById("medicine-list")

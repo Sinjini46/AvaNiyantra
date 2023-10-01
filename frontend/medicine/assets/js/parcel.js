@@ -9,7 +9,7 @@ let options = {
     body: JSON.stringify(user)
 }
 
-let fetchRes = fetch(url = "http://sih2022.herokuapp.com/medicine/", options);
+let fetchRes = fetch(url = "http://127.0.0.1:8000/medicine/", options);
 fetchRes
     .then(res => res.json())
     .then(d => {
@@ -59,7 +59,7 @@ fetchRes
                             body: JSON.stringify(parcel)
                         }
 
-                        let fetchRes = fetch(url = "http://sih2022.herokuapp.com/parcel/create_parcel", options);
+                        let fetchRes = fetch(url = "http://127.0.0.1:8000/parcel/create_parcel", options);
                         fetchRes.then(res => res.json())
                             .then(d => {
                                 console.log(d)

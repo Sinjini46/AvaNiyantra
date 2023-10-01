@@ -6,7 +6,7 @@ let options = {
     body: JSON.stringify({ "receiver_id": localStorage.getItem('user') })
 }
 
-let fetchRes = fetch(url = "https://sih2022.herokuapp.com/batch/get_recv", options);
+let fetchRes = fetch(url = "http://127.0.0.1:8000/batch/get_recv", options);
 fetchRes
     .then(async res => res.json())
     .then(async d => {

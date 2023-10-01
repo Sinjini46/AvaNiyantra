@@ -9,7 +9,7 @@ let opt = {
     body: JSON.stringify(id)
 }
 
-let f = fetch(url = "http://sih2022.herokuapp.com/parcel/get_parcels_id", opt);
+let f = fetch(url = "http://127.0.0.1:8000/parcel/get_parcels_id", opt);
 f
     .then(res => res.json())
     .then(d => {
