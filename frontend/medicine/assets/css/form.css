@@ -1,11 +1,4 @@
-
-.get-in-touch {
-    max-width: 800px;
-    margin:80px auto;
-    position: relative;
-  
-  }
-  .get-in-touch .title {
+  .title {
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -20,17 +13,17 @@
       -webkit-background-clip: text !important;
       -webkit-text-fill-color: transparent !important;
   }
-  
+
   .contact-form .form-field {
     position: relative;
     margin: 32px 0;
-    
+
   }
   .contact-form .input-text {
     display: block;
     width: 100%;
     height: 36px;
-    
+
     border-width: 0 0 2px 0;
     border-color: #5543ca;
     font-size: 18px;
@@ -39,9 +32,9 @@
   }
   .contact-form .input-text:focus {
     outline: none;
-    
+
   }
-  
+
   .contact-form .label {
     left: 20px;
     bottom: 11px;
@@ -64,7 +57,3 @@
     width:200px;
     cursor: pointer;
   }
-
-
-  
-  

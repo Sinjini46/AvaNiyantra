@@ -2,15 +2,25 @@ const express = require('express')
 const pharma = require('../models/pharma')
 const { request } = require('express')
 const router = express.Router()
-
+//const medicine = require('medicine')
 router.post('/add', async(req, res) => {
+
+    //console.log(req.body.id)
+    /* console.log(req.body.patientName)*/
+    //console.log(req.body.medicines) 
+    /* user = req.body.id
+    req_medicines = req.body.medicines
+    console.log(req.body.patientName)
+    console.log(req.body.patientContactNumber)
+    console.log(req.body.doctorName)
+    console.log(req.body.doctorRegNumber)
+    console.log(req.body.medicines) */
     const json = {
-        recp_id: req.body.id,
-        name: req.body.name,
-        contact_number: req.body.contact_number,
-        doc_name: req.body.doc_name,
-        doc_reg: req.body.doc_reg,
-        med_details: req.body.med_details
+        name: req.body.patientName,
+        contact_number: req.body.patientContactNumber,
+        doc_name: req.body.doctorName,
+        doc_reg: req.body.doctorRegNumber,
+        med_details: req.body.medicines
     }
 
     const a = await new pharma(json)
@@ -21,6 +31,9 @@ router.post('/add', async(req, res) => {
     } catch (e) {
         res.json({ msg: 'err', data: e })
     }
+
 })
 
 module.exports = router
+
+

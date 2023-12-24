@@ -31,6 +31,7 @@ router.post('/delete', async(req, res) => {
 })
 
 router.post('/update', async(req, res) => {
+    //console.log(req)
     medicine.findByIdAndUpdate(req.body._id, req.body, (err, data) => {
         if (err) {
             res.json({ msg: err })
@@ -39,6 +40,28 @@ router.post('/update', async(req, res) => {
         }
     })
 })
+
+router.post('/update_med', async(req, res) => {
+    const _id =  req.body.id
+    const _name = req.body.name
+    try{
+        console.log(_id)
+        console.log(_name)
+        const result = await medicine.updateOne(
+            {_id, _name},
+            {$set : {quantity:req.body.quantity}}
+        );
+        console.log(result)
+        if (result.nModified === 0) {
+            res.json({ msg: "No matching document found" });
+        } else {
+            res.json({ msg: "Document updated" });
+        }
+    }
+    catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
 
 router.post('/', async(req, res) => {
     const a = await medicine.find({ id: req.body.id })

@@ -14,7 +14,6 @@ f
     .then(res => res.json())
     .then(d => {
         a = document.getElementById("cart")
-
         for (i = 0; i < d.data.length; i++) {
             if (d.data[i].active == true) {
                 tr = document.createElement("tr")

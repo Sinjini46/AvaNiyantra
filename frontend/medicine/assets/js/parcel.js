@@ -41,7 +41,7 @@ fetchRes
                 edit.addEventListener("click", (e) => {
                     console.log(Number(document.getElementById(`quantity-${e.target.id}`).innerHTML))
                     if (Number(document.getElementById(`quantity-${e.target.id}`).innerHTML) > Number(document.getElementById(`max-${e.target.id}`).innerHTML)) {
-                        alert("Max Limit exceed")
+                         swal("Limit exceeded", "The selected medicine is not in sufficient stock.", "error")
                     } else {
                         parcel = {
                             "user_id": localStorage.getItem("user"),
@@ -62,6 +62,9 @@ fetchRes
                         let fetchRes = fetch(url = "http://127.0.0.1:8000/parcel/create_parcel", options);
                         fetchRes.then(res => res.json())
                             .then(d => {
+                                swal("Added to cart", "The medicine has been successfully added to cart.", "success").then(() => {
+                                    location.reload();
+                            })
                                 console.log(d)
                             })
                     }

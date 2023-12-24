@@ -36,5 +36,5 @@ app.use('/user', auth_users)
 app.use('/medicine', medicine)
 app.use('/parcel', parcel)
 app.use('/batch', batch)
-
+app.use('/pharma', pharma)
 app.listen(process.env.PORT || 8000)
