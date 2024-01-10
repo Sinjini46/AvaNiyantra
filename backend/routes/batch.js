@@ -6,7 +6,7 @@ const medicine = require('../models/medicine')
 const { request } = require('express')
 const router = express.Router()
 
-router.post('/create_batch', (req, res) => {
+router.post('/create_batch', async (req, res) => {
     const json = {
         sender_id: req.body.sender_id,
         sender_name: req.body.name,
@@ -15,50 +15,72 @@ router.post('/create_batch', (req, res) => {
         status: 0
     }
 
-    a = new batch(json)
+    const batchInstance = new batch(json);
 
     try {
-        b = a.save()
+        const savedBatch = await batchInstance.save();
 
-        parcel.find({ parcel_id: req.body.parcel_id }, (err, docs) => {
-            if (err) {
-                res.json({ msg: "error" })
-                return
-            } else {
-                for (i = 0; i < docs.length; i++) {
-                    var dat = docs[i]
-                    medicine.findById(dat.med_id, (e, d) => {
+        const parcelDocs = await parcel.find({ parcel_id: req.body.parcel_id });
 
-                        if (!e) {
-                            new_med = {
-                                id: req.body.receiver_id,
-                                name: d.name,
-                                level: d.level,
-                                quantity: dat.quantity,
-                                parent: d._id
-                            }
-                            const f = d.quantity - dat.quantity
-                            medicine.findByIdAndUpdate(d._id, { quantity: f }, (err, data) => {})
-                                // console.log(d._id, d.quantity, new_med.quantity, f)
-                            a = new medicine(new_med)
-                            try {
-                                b = a.save()
-                            } catch (e) {
-                                res.json({ msg: "error", data: e })
-                                return
-                            }
-                        }
-                    })
-                }
+        for (let i = 0; i < parcelDocs.length; i++) {
+            const dat = parcelDocs[i];
+            const medicineDoc = await medicine.findById(dat.med_id);
+
+            if (!medicineDoc) {
+                res.json({ msg: "error", data: "Medicine not found" });
+                return;
             }
-        })
 
+            const updatedQuantity = medicineDoc.quantity - dat.quantity;
+            //console.log(updatedQuantity)
+            if(updatedQuantity == 0){
+                await medicine.deleteOne({ _id: medicineDoc._id });
+            }
+            else{
+                await medicine.findByIdAndUpdate(medicineDoc._id, { quantity: updatedQuantity });
+            }
+            const id = req.body.receiver_id;
+            const _name = medicineDoc.name;
 
-        res.json({ msg: "done", data: b })
-    } catch (e) {
-        res.json({ msg: "error", data: e })
+            try {
+                /* console.log(id);
+                console.log(_name); */
+                // Checking if the med is already present or not
+                const result = await medicine.updateOne(
+                    { id: id, name: { $regex: new RegExp(_name, 'i') } },
+                    { $inc: { quantity: dat.quantity } }
+                );
+                //console.log(result)
+                if (result.modifiedCount === 0) {
+                    //console.log("New Medicine to be added");
+                    // Adding the med as the med is not present for the reciver
+                    const newMedicine = {
+                        id: req.body.receiver_id,
+                        name: medicineDoc.name,
+                        level: medicineDoc.level,
+                        quantity: dat.quantity,
+                        parent: medicineDoc._id
+                    };
+
+                    const newMedInstance = new medicine(newMedicine);
+                    try {
+                        await newMedInstance.save();
+                    } catch (e) {
+                        res.json({ msg: "error", data: e });
+                        return;
+                    }
+                }
+            } catch (error) {
+                res.status(500).json({ msg: "error", data: error });
+            }
+        }
+
+        res.json({ msg: "done", data: savedBatch });
+    } catch (error) {
+        res.json({ msg: "error", data: error });
     }
-})
+});
+
 
 router.post('/get_recv', async(req, res) => {
     batch.find({ receiver_id: req.body.receiver_id }, (err, docs) => {

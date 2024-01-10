@@ -86,6 +86,25 @@ router.post('/change_status', async(req, res) => {
     })
 })
 
+router.post('/delete_cart_medicines', async (req, res) => {
+    //console.log(req.body)
+    try {
+        const result = await parcel.findOneAndDelete({
+            _id: req.body._id,
+            med_id: req.body.med_id
+        });
+
+        if (!result) {
+            res.json({ msg: "No matching document found for deletion" });
+        } else {
+            res.json({ msg: "Medicine deleted successfully", data: result });
+        }
+    } catch (error) {
+        res.status(500).json({ msg: "Error", data: error.message });
+    }
+});
+
+
 router.post('/get_parcels_id', async(req, res) => {
     parcel.find({ user_id: req.body.user_id }, (err, docs) => {
         if (err) {

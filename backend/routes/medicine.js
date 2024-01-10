@@ -30,23 +30,59 @@ router.post('/delete', async(req, res) => {
     })
 })
 
-router.post('/update', async(req, res) => {
-    //console.log(req)
-    medicine.findByIdAndUpdate(req.body._id, req.body, (err, data) => {
-        if (err) {
-            res.json({ msg: err })
+router.post('/update', async (req, res) => {
+    //console.log(req.body)
+    try {
+        if (req.body.quantity == 0) {
+            const result = await medicine.deleteOne({ _id: req.body._id });
+            if (result.deletedCount === 0) {
+                res.json({ msg: "No matching document found for deletion" });
+            } else {
+                res.json({ msg: "Document deleted successfully" });
+            }
         } else {
-            res.json({ msg: "done" })
+            const result = await medicine.findByIdAndUpdate(req.body._id, req.body);
+            if (!result) {
+                res.json({ msg: "No matching document found for update" });
+            } else {
+                res.json({ msg: "Document updated successfully" });
+            }
         }
-    })
-})
+    } catch (error) {
+        res.status(500).json({ msg: "Error", error: error.message });
+    }
+});
+
+router.post('/update_med_by_user', async(req, res) => {
+    //console.log(req)
+    const id =  req.body.id
+    const _name = req.body.name
+    try{
+        /* console.log(id)
+        console.log(_name) */
+        const result = await medicine.updateOne(
+            { id: id, name: { $regex: new RegExp(_name, 'i') } },
+            {$inc : {quantity:req.body.quantity}}
+        );
+        //console.log(result)
+        if (result.modifiedCount === 0) {
+            res.json({ msg: "No matching document found" });
+        } else {
+            res.json({ msg: "Document updated" });
+        }
+    }
+    catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
 
 router.post('/update_med', async(req, res) => {
+    //console.log(req)
     const _id =  req.body.id
     const _name = req.body.name
     try{
-        console.log(_id)
-        console.log(_name)
+        //console.log(_id)
+        //console.log(_name)
         const result = await medicine.updateOne(
             {_id, _name},
             {$set : {quantity:req.body.quantity}}

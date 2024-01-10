@@ -54,7 +54,7 @@ fetchRes
                 td_date = document.createElement("td")
                 td_date.appendChild(tn_date)
 
-                tr1.appendChild(td_date)
+              /*   tr1.appendChild(td_date) */
                 tr1.appendChild(td0)
                 tr1.appendChild(td2)
                 tr1.appendChild(td1)
