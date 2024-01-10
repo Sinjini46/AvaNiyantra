@@ -34,7 +34,7 @@
   }
 
   /**
-   * Easy on scroll event listener 
+   * Easy on scroll event listener
    */
   const onscroll = (el, listener) => {
     el.addEventListener('scroll', listener)
@@ -177,7 +177,7 @@
   });
 
   /**
-   * Initiate portfolio lightbox 
+   * Initiate portfolio lightbox
    */
   const portfolioLightbox = GLightbox({
     selector: '.portfolio-lightbox'
@@ -211,4 +211,30 @@
     }
   });
 
-})()
+})
+/* (function submitForm() {
+  var name = document.getElementById('name').value;
+  var email = document.getElementById('email').value;
+  var subject = document.getElementById('subject').value;
+  var message = document.getElementById('message').value;
+
+  if (!name || !email || !subject || !message) {
+    swal("Please fill out all fields");
+    return;
+  }
+
+  if (!isValidEmail(email)) {
+    swal("Please enter a valid email address");
+    return;
+  }
+
+  // Simulate form submission (replace this with your actual submission logic)
+  swal("Message sent successfully!");
+  document.getElementById('contactForm').reset();
+})
+
+(function isValidEmail(email) {
+  // Use a regular expression to validate email format
+  var emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  return emailRegex.test(email);
+}) */()

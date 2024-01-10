@@ -18,7 +18,12 @@ btn.addEventListener("click", () => {
         .then(d => {
             if (d.msg == "No user") {
                 swal("No User Found", "The provided email does not correspond to a registered user.", "error");
-            } else {
+            }
+            else if(d.data._id==localStorage.getItem("user"))
+            {
+                swal("Error", "You cannot send the parcel to yourself.", "error");
+            }
+            else {
                 recv_id = d.data._id
 
                 let options = {

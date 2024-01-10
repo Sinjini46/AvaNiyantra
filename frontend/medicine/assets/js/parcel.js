@@ -42,7 +42,11 @@ fetchRes
                     console.log(Number(document.getElementById(`quantity-${e.target.id}`).innerHTML))
                     if (Number(document.getElementById(`quantity-${e.target.id}`).innerHTML) > Number(document.getElementById(`max-${e.target.id}`).innerHTML)) {
                          swal("Limit exceeded", "The selected medicine is not in sufficient stock.", "error")
-                    } else {
+                    }
+                    else if (Number(document.getElementById(`quantity-${e.target.id}`).innerHTML) == 0){
+                        swal("Error", "Null value cannot be added to the cart.", "error")
+                    }
+                    else {
                         parcel = {
                             "user_id": localStorage.getItem("user"),
                             "med_id": e.target.id,

@@ -31,7 +31,7 @@
   }
 
   /**
-   * Easy on scroll event listener 
+   * Easy on scroll event listener
    */
   const onscroll = (el, listener) => {
     el.addEventListener('scroll', listener)
@@ -68,8 +68,8 @@
       if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight))
        {
         navbarlink.classList.add('active')
-      } 
-      else 
+      }
+      else
       {
         navbarlink.classList.remove('active')
       }
@@ -320,4 +320,3 @@
   }
 
 })();
-
